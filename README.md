@@ -12,5 +12,12 @@ it is saved but the verification status remains false.
 You might need a graphql playground to make your query requests.
 
 To start the server, type "npm start" at the console
+Go to http://localhost:6060/graphql
+
 Make a request to paystack via the playground by inputing your account name and bank code
+
+![Screenshot](graph2.jpg)
+
+Get a single user
+
 
