@@ -20,4 +20,4 @@ Make a request to paystack via the playground by inputing your account name and 
 
 Get a single user
 
-
+![Screenshot](graph3.jpg)
