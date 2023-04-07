@@ -6,7 +6,8 @@ const {typeDefs,resolvers} = require("./graphql/typedef/root");
 // const {resolvers} = require("./graphql/resolvers/user")
 // const session = require("express-session");
 // const MongoDbSession = require("connect-mongo")(session);
-const { ApolloServer } = require("apollo-server-express");
+// const { ApolloServer } = require("@apollo/server");
+const { ApolloServer } = require("apollo-server-express")
 
 const PORT = process.env.PORT || 6060;
 
@@ -58,15 +59,19 @@ startApp();
 
 app.use(express.json());
 
-// app.listen(PORT, () => {
-//   console.log(`server listening at port:${PORT}`);
-// });
-server.start().then(res => {
-  server.applyMiddleware({ app, path:"/graphql"});
-  app.listen(PORT, () =>
-    console.log("nice")
-  )
- })
+// server.start().then(res => {
+//   server.applyMiddleware({ app, path:"/graphql"});
+//   app.listen(PORT, () =>
+//     console.log("nice")
+//   )
+//  })
+server.start().then(() => {
+  server.applyMiddleware({ app, path: '/graphql' });
+});
+
+app.listen(PORT, () => {
+  console.log('nice');
+});
 
 // server.applyMiddleware({ app, path: "/graphql" });
 // server.listen().then(({ PORT }) => {

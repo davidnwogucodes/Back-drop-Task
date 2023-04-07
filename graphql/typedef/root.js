@@ -1,11 +1,14 @@
-const { gql } = require("apollo-server-express");
+// const { gql } = require("@apollo/server");
 const { User } = require("../../models/index");
-const { ApolloError } = require("apollo-server-errors");
-const fetch = require("node-fetch");
+const { ApolloError } = require("@apollo/server/errors");
+const { gql } = require('graphql-tag');
+
+// const fetch = require("node-fetch");
+const fetch = import('node-fetch').then((module) => module.default)
 const secretKey = "sk_test_a5cc80a13e56bfefd86b2db400e79ba8ee561382";
 const { distance, closest } = require("fastest-levenshtein");
 const { GraphQLError } = require("graphql");
-// const jwt = require("jsonwebtoken")
+
 
 const typeDefs = gql`
   type User {
